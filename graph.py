@@ -77,7 +77,7 @@ def retrieval_node(state: AgentState) -> AgentState:
         return {"message": "Please mention the route ID you want to get information about?", "end":True}
     data = fetch_from_data(r_id)
     if not data:
-        return {"message": "sorry not able to fetch the data......", "end":True}
+        return {"message": f"sorry not able to fetch the data......check if your route_id {r_id} is correct", "end":True}
     return {"route_data": fetch_from_data(r_id)}
 def build_retrieval_graph():
     builder = StateGraph(AgentState)
